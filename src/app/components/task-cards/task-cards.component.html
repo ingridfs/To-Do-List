@@ -1,14 +1,17 @@
 <ul class="task-list">
     <li *ngFor="let i of tasks" class="task-list-item">
         <mat-card class="card-item">
-            <mat-card-content class="card-title">
+            <mat-card-content class="card-title" [(ngModel)]="i.description" contenteditable="{{editDescription}}">
                 {{ i.description }}
             </mat-card-content>
             <div class="icons-container">
                 <mat-checkbox class="check-box"></mat-checkbox>
+                <button (click)="editTask(i)" mat-icon-button>
+                    <mat-icon>edit</mat-icon>
+                </button>
                 <button (click)="removeTask(i)" mat-icon-button>
                     <mat-icon>delete</mat-icon>
-                </button>
+                </button>                
             </div>
         </mat-card>
     </li>

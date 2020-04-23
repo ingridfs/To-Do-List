@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TaskCardsComponent implements OnInit {
 
   tasks:any;
+  editDescription:boolean = false;
 
   constructor(private taskService:TaskService) { }
 
@@ -20,6 +21,10 @@ export class TaskCardsComponent implements OnInit {
   readTask(){
     this.tasks = this.taskService.read();
     console.log(this.tasks);
+  }
+  editTask(index){
+    console.log(index);
+    this.editDescription = true;
   }
  removeTask(index){
    this.taskService.delete(index);
