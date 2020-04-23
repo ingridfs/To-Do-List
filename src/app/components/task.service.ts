@@ -8,7 +8,6 @@ export class TaskService {
 
   private urlBase = "";
   private taskObject = [];
-  private taskObjectFinal;
 
   constructor() { }
 
@@ -19,8 +18,8 @@ export class TaskService {
   read() {
     return this.taskObject;
   }
+
   delete(index){
     this.taskObject.splice(index,1);
-  
   }
 }

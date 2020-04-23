@@ -22,13 +22,15 @@ export class TaskCardsComponent implements OnInit {
     this.tasks = this.taskService.read();
     console.log(this.tasks);
   }
+  
   editTask(index){
     console.log(index);
     this.editDescription = true;
   }
- removeTask(index){
-   this.taskService.delete(index);
- }
+
+  removeTask(index){
+    this.taskService.delete(index);
+  }
  
 
 }

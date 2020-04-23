@@ -1,7 +1,8 @@
 <ul class="task-list">
     <li *ngFor="let i of tasks" class="task-list-item">
         <mat-card class="card-item">
-            <mat-card-content class="card-title" [(ngModel)]="i.description" contenteditable="{{editDescription}}">
+            <mat-card-content class="card-title" [(ngModel)]="i.description" >
+                <!-- contenteditable="{{editDescription}}" -->
                 {{ i.description }}
             </mat-card-content>
             <div class="icons-container">
