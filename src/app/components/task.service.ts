@@ -13,11 +13,7 @@ export class TaskService {
   constructor() { }
 
   create(task: Task) {
-    console.log("entrou no create task");
     this.taskObject.push(task);
-    console.log(this.taskObject);
-    // this.taskObjectFinal = Object.assign({}, this.taskObject);
-    // console.log("final object", this.taskObjectFinal);
   } 
 
   read() {

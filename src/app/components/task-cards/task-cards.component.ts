@@ -21,9 +21,5 @@ export class TaskCardsComponent implements OnInit {
     this.tasks = this.taskService.read();
     console.log(this.tasks);
   }
-  
-  // public sendTask(input:any) : void {
-  //   this.tasks.push(input.tasks)
-  // }
 
 }

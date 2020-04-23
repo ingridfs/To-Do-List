@@ -7,8 +7,6 @@ import { TaskService } from './../task.service';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
-
-  //@Output() sendTask = new EventEmitter<any>();
   
   public input:any = {
     id: 0,
@@ -25,6 +23,5 @@ export class AddTaskComponent implements OnInit {
     let sendInfo = Object.assign({}, this.input);
     this.taskService.create(sendInfo);
     this.input.description = "";
-    //console.log(this.sendTask.emit(this.input));
   }
 }
