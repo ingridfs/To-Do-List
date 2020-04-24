@@ -4,7 +4,7 @@
             <div *ngIf="!condicao; else exibition">{{ i.description }}</div>
                 <ng-template #exibition> 
                     <!-- <mat-card-content class="card-title" [(ngModel)]="i.description" (dblclick)="editTask()"> -->
-                        <input type="text" [(ngModel)]="i.description" (change)="updateTask($event)">
+                        <input type="text" [(ngModel)]="i.description" (blur)="updateTask(i)">
                 </ng-template>
             
             <div class="icons-container">

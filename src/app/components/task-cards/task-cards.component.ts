@@ -30,8 +30,9 @@ export class TaskCardsComponent implements OnInit {
     this.taskService.delete(index);
     this.readTask();
   }
-  updateTask($event){
-    
+  updateTask(id){
+    this.taskService.update(id,id.description);
+    this.condicao = false;
   }
 
 }

@@ -22,6 +22,12 @@ export class TaskService {
     return this.taskObject;
   }
 
+  update(id, description){
+    this.taskObject[id] = Object.assign({}, this.taskObject[description]);
+    console.log(this.taskObject);
+    
+  }
+
   delete(id){
   this.taskObject = this.taskObject.filter(task => task.id !== id )
    return this.taskObject;
