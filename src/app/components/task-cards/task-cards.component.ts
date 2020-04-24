@@ -15,7 +15,6 @@ export class TaskCardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.readTask();
-  
   }
   
   readTask(){
@@ -28,6 +27,7 @@ export class TaskCardsComponent implements OnInit {
 
   removeTask(index){
     this.taskService.delete(index);
+    this.readTask();
   }
  
 
