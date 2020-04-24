@@ -9,8 +9,8 @@ import { Task } from '../task.model';
 })
 export class TaskCardsComponent implements OnInit {
 
-  tasks:any;
-  condicao:boolean = false;
+  tasks:Task[];
+
 
   constructor(private taskService:TaskService) { }
 
@@ -22,17 +22,18 @@ export class TaskCardsComponent implements OnInit {
     this.tasks = this.taskService.read();
   }
   
-  editTask(){
-   this.condicao = true;
+  editTask(id){
+    this.tasks[id].editable = true;
+  }
+  
+  updateTask(id){
+    //this.taskService.update(id, id.description);
+    this.tasks[id].editable = false;
   }
 
-  removeTask(index){
-    this.taskService.delete(index);
+  removeTask(id){
+    this.taskService.delete(id);
     this.readTask();
-  }
-  updateTask(id){
-    this.taskService.update(id,id.description);
-    this.condicao = false;
   }
 
 }

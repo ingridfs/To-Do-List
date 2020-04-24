@@ -9,6 +9,7 @@
     list-style: none;
 }
 
+
 .card-item {
     display: flex;
     flex-direction: column;
@@ -21,9 +22,11 @@
     background-color: #FFFF88;
 }
 
-.card-title {
+.text-container {
     height: 100%;
     word-wrap: break-word;
+    overflow: auto;
+    flex: 2;
 }
 
 .icons-container {
@@ -31,5 +34,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
 }
 

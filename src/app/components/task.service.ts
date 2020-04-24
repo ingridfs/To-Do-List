@@ -8,29 +8,25 @@ export class TaskService {
 
   private urlBase = "";
   private taskObject = [];
-  private id: number = 1;
+  private id: number = 0;
 
   constructor() { }
 
   create(task: Task) {
     task.id = this.id++;
     this.taskObject.push(task);
-    console.log(this.taskObject);
-    
   } 
+
   read() {
     return this.taskObject;
   }
 
   update(id, description){
-    this.taskObject[id] = Object.assign({}, this.taskObject[description]);
-    console.log(this.taskObject);
-    
+    return this.taskObject[id] = Object.assign({}, this.taskObject[description]);
   }
 
   delete(id){
-  this.taskObject = this.taskObject.filter(task => task.id !== id )
-   return this.taskObject;
+   return this.taskObject = this.taskObject.filter(task => task.id !== id )
   }
  
 

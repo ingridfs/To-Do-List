@@ -11,7 +11,8 @@ export class AddTaskComponent implements OnInit {
   
   public input:Task = {
     description: '',
-    editing: false
+    status: false,
+    editable: false
   };
 
   constructor(private taskService: TaskService) { }

@@ -1,5 +1,6 @@
 export interface Task {
     id?:number; 
     description: string; 
-    editing: boolean;
+    status: boolean;
+    editable: boolean;
 }

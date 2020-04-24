@@ -1,22 +1,21 @@
 <ul class="task-list">
-    <li *ngFor="let i of tasks" class="task-list-item">
-        <mat-card class="card-item">
-            <div *ngIf="!condicao; else exibition">{{ i.description }}</div>
-                <ng-template #exibition> 
-                    <!-- <mat-card-content class="card-title" [(ngModel)]="i.description" (dblclick)="editTask()"> -->
-                        <input type="text" [(ngModel)]="i.description" (blur)="updateTask(i)">
-                </ng-template>
-            
-            <div class="icons-container">
-                <mat-checkbox class="check-box"></mat-checkbox>
-                <button (click)="editTask()" mat-icon-button>
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button (click)="removeTask(i.id)" mat-icon-button>
-                    <mat-icon>delete</mat-icon>
-                </button>                
-            </div>
-        </mat-card>
-    </li>
+  <li *ngFor="let i of tasks" class="task-list-item">
+    <mat-card class="card-item">
+      <div *ngIf="!i.editable; else exibition" class="text-container">
+        {{ i.description }}
+      </div>
+      <ng-template #exibition>
+        <input type="text" [(ngModel)]="i.description" (blur)="updateTask(i.id)" (keyup.enter)="updateTask(i.id)" />
+      </ng-template>
+      <div class="icons-container">
+        <mat-checkbox class="check-box"></mat-checkbox>
+        <button (click)="editTask(i.id)" mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="removeTask(i.id)" mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </li>
 </ul>
-
