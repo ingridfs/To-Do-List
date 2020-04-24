@@ -1,6 +1,6 @@
 <div class="container">
-  <input type="text" matInput placeholder="Digite sua Tarefa: Estudar, terminar projeto ..." name="tasks" [(ngModel)]="input.description" (keyup.enter)="getTask()">
-  <button type="submit" class="input-btn" mat-icon-button>
+  <input type="text" matInput name="tasks" [(ngModel)]="input.description" (keyup.enter)="getTask()" placeholder="Digite sua Tarefa: Estudar, terminar projeto ..." >
+  <button type="submit" class="input-btn" mat-icon-button (click)="getTask()">
     <mat-icon>add</mat-icon>
   </button>
 </div>

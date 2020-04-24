@@ -20,11 +20,9 @@ export class TaskCardsComponent implements OnInit {
   
   readTask(){
     this.tasks = this.taskService.read();
-    console.log(this.tasks);
   }
   
-  editTask(index){
-    console.log(index);
+  editTask(){
     this.editDescription = true;
   }
 

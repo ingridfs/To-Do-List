@@ -8,11 +8,15 @@ export class TaskService {
 
   private urlBase = "";
   private taskObject = [];
+  private id: number = 0;
 
   constructor() { }
 
   create(task: Task) {
+    task.id = this.id++;
     this.taskObject.push(task);
+    console.log(this.taskObject);
+    
   } 
 
   read() {
@@ -20,6 +24,7 @@ export class TaskService {
   }
 
   delete(index){
-    this.taskObject.splice(index,1);
+   this.taskObject.splice(index, 1);
   }
 }
+
