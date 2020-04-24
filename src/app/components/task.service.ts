@@ -26,7 +26,7 @@ export class TaskService {
   this.taskObject = this.taskObject.filter(task => task.id !== id )
    return this.taskObject;
   }
-  
+ 
 
 }
 

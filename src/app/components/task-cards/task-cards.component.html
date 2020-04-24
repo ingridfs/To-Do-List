@@ -1,9 +1,12 @@
 <ul class="task-list">
     <li *ngFor="let i of tasks" class="task-list-item">
         <mat-card class="card-item">
-            <mat-card-content class="card-title" [(ngModel)]="i.description" [contentEditable]="editDescription">
-                {{ i.description }}
-            </mat-card-content>
+            <div *ngIf="!condicao; else exibition">{{ i.description }}</div>
+                <ng-template #exibition> 
+                    <!-- <mat-card-content class="card-title" [(ngModel)]="i.description" (dblclick)="editTask()"> -->
+                        <input type="text" [(ngModel)]="i.description" (change)="updateTask($event)">
+                </ng-template>
+            
             <div class="icons-container">
                 <mat-checkbox class="check-box"></mat-checkbox>
                 <button (click)="editTask()" mat-icon-button>

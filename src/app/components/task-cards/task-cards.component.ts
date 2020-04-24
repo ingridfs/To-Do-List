@@ -1,5 +1,6 @@
 import { TaskService } from './../task.service';
 import { Component, OnInit } from '@angular/core';
+import { Task } from '../task.model';
 
 @Component({
   selector: 'app-task-cards',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TaskCardsComponent implements OnInit {
 
   tasks:any;
-  editDescription:boolean = false;
+  condicao:boolean = false;
 
   constructor(private taskService:TaskService) { }
 
@@ -22,13 +23,15 @@ export class TaskCardsComponent implements OnInit {
   }
   
   editTask(){
-    this.editDescription = true;
+   this.condicao = true;
   }
 
   removeTask(index){
     this.taskService.delete(index);
     this.readTask();
   }
- 
+  updateTask($event){
+    
+  }
 
 }
